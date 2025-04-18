@@ -26,7 +26,7 @@
             <transition name="slide-fade">
               <span
                   key="text"
-                  class="text-xl font-bold text-[#1abc9c] font-poppins whitespace-nowrap"
+                  class="text-xl font-bold text-blue-500 font-poppins whitespace-nowrap"
               >
                 Vibora PR
               </span>
@@ -50,11 +50,11 @@
                 :key="link.href"
                 class="group font-poppins font-semibold relative"
             >
-              <div class="flex items-center gap-2">
-                <component :is="link.icon" class="w-6 h-6 text-gray-800 dark:text-white" />
+              <div class="flex items-center gap-2 ">
+                <component :is="link.icon" class="w-6 h-6 text-gray-800 dark:text-white " />
               </div>
               <span
-                  class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#1abc9c] to-[#16a085] transition-all duration-300 group-hover:w-full rounded"
+                  class="absolute  bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#4299e1] to-[#16a085] transition-all duration-300 group-hover:w-full rounded"
               ></span>
               <div
                   class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 text-xs text-black dark:text-white px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-lg"
@@ -95,8 +95,6 @@
     </transition>
   </header>
 </template>
-
-
 <script setup>
 import { ref, onMounted } from 'vue'
 import { Bars3Icon, XMarkIcon, SunIcon, MoonIcon, HomeIcon, InformationCircleIcon, BriefcaseIcon, UsersIcon, PhoneIcon } from "@heroicons/vue/24/outline"
@@ -104,8 +102,7 @@ import Hero from "./Hero.vue";
 
 const isMenuOpen = ref(false)
 const isLogoImage = ref(true)
-const isDarkMode = ref(localStorage.getItem('theme') === 'dark')  // Read the saved theme from localStorage
-
+const isDarkMode = ref(localStorage.getItem('theme') === 'dark')
 const links = [
   { href: "#", text: "Uy", icon: HomeIcon },
   { href: "#about", text: "Biz Haqimizda", icon: InformationCircleIcon },
@@ -137,10 +134,18 @@ const closeMenu = () => {
 }
 
 onMounted(() => {
+  if (isDarkMode.value) {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+
+  // Toggle the logo image every 4 seconds
   setInterval(() => {
     isLogoImage.value = !isLogoImage.value
   }, 4000)
 })
+
 </script>
 
 <style scoped>

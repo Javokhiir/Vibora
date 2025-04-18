@@ -1,44 +1,54 @@
 <template>
-  <section class="relative w-full h-screen flex items-center justify-center bg-gradient-to-r from-[#1abc9c] to-[#16a085] text-white">
-    <div class="absolute inset-0 bg-cover bg-center transition-all duration-500 ease-in-out opacity-50" style="background-image: url('/your-hero-background.jpg');"></div>
-
-    <div class="relative z-10 text-center px-4 md:px-12">
-      <h1 class="text-5xl font-bold leading-tight mb-4 animate__animated animate__fadeIn animate__delay-1s">
-        Innovatsion Marketing Yechimlari
-      </h1>
-      <p class="text-lg mb-6 animate__animated animate__fadeIn animate__delay-2s">
-        Bizning kreativ yondoshuvimiz bilan brendingizni yangi bosqichga olib chiqing.
+  <section id="about" class="py-20 bg-gradient-to-r from-gray-100 to-gray-200">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-tiffany-500 mb-6">Biz Haqimizda</h2>
+      <p class="text-lg text-gray-700 mb-12 max-w-3xl mx-auto">
+        Vibora PR marketing va brendni rivojlantirishda innovatsion va yuqori samarali yondashuvlarni taqdim etadi. Bizning
+        jamoamiz har bir mijoz uchun individual strategiyalarni ishlab chiqadi.
       </p>
 
-      <!-- CTA Button -->
-      <a href="#contact" class="inline-block bg-[#1abc9c] text-white py-3 px-8 text-xl font-semibold rounded-full transition-all duration-300 transform hover:scale-105 hover:bg-[#16a085] animate__animated animate__fadeIn animate__delay-3s">
-        Biz bilan bog‘laning
-      </a>
-    </div>
+      <div class="flex flex-wrap justify-center gap-8">
+        <!-- Card 1 -->
+        <div class="w-full md:w-1/3 p-4 transform hover:scale-105 transition duration-300">
+          <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl group">
+            <div class="h-64 bg-tiffany-100 rounded-xl overflow-hidden mb-6">
+              <img src="/vi-logo.png" alt="Image 1" class="object-cover w-full h-full group-hover:scale-110 transition-all duration-500" />
+            </div>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-2 group-hover:text-tiffany-500 transition duration-300">Yaratilish va Innovatsiya</h3>
+            <p class="text-gray-600">Yangi g'oyalar va kreativ yondashuvlar orqali mijozlarimizga maxsus echimlar taqdim etamiz.</p>
+          </div>
+        </div>
 
-    <!-- Parallax effect for text -->
-    <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 animate__animated animate__fadeIn animate__delay-4s">
-      <p class="text-lg opacity-75">
-        Bizning maqsadimiz – sizning biznesingizni yanada yuqori cho‘qqilarga olib chiqish.
-      </p>
+        <!-- Card 2 -->
+        <div class="w-full md:w-1/3 p-4 transform hover:scale-105 transition duration-300">
+          <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl group">
+            <div class="h-64 bg-tiffany-100 rounded-xl overflow-hidden mb-6">
+              <img src="https://via.placeholder.com/500" alt="Image 2" class="object-cover w-full h-full group-hover:scale-110 transition-all duration-500" />
+            </div>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-2 group-hover:text-tiffany-500 transition duration-300">Strategiya va Rejalashtirish</h3>
+            <p class="text-gray-600">Bizning maqsadimiz har bir kompaniya uchun o'ziga xos va muvaffaqiyatga erishadigan strategiyalar yaratishdir.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="w-full md:w-1/3 p-4 transform hover:scale-105 transition duration-300">
+          <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl group">
+            <div class="h-64 bg-tiffany-100 rounded-xl overflow-hidden mb-6">
+              <img src="https://via.placeholder.com/500" alt="Image 3" class="object-cover w-full h-full group-hover:scale-110 transition-all duration-500" />
+            </div>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-2 group-hover:text-tiffany-500 transition duration-300">Brendni Rivojlantirish</h3>
+            <p class="text-gray-600">Brendni yaratish va uni bozorda muvaffaqiyatli pozitsiyalash uchun samarali va ijodiy usullarni qo'llaymiz.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
-
-  <!-- Dark mode toggle button -->
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+// Script setup qismini kerakli metodlar yoki o'zgaruvchilar bilan to'ldirishingiz mumkin
 </script>
 
 <style scoped>
-
-.font-poppins {
-  font-family: 'Poppins', sans-serif;
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
+/* Maxsus CSS qo'shish uchun */
 </style>

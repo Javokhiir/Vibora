@@ -2,8 +2,8 @@
   <div class="font-sans text-gray-800 dark:text-white bg-white dark:bg-gray-900 transition-all">
     <Navbar />
     <About />
-    <Projects />
     <OurTeam />
+    <Projects />
     <Contact />
     <Footer />
   </div>
