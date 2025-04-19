@@ -19,7 +19,7 @@
                 key="logo"
                 src="/vi-logo.png"
                 alt="Vibora PR Logo"
-                class="w-10 h-10 object-contain"
+                class="w-14 h-14 object-contain"
             />
           </template>
           <template v-else>
@@ -106,8 +106,8 @@ const isDarkMode = ref(localStorage.getItem('theme') === 'dark')
 const links = [
   { href: "#", text: "Uy", icon: HomeIcon },
   { href: "#about", text: "Biz Haqimizda", icon: InformationCircleIcon },
-  { href: "#projects", text: "Proyektlar", icon: BriefcaseIcon },
   { href: "#team", text: "Jamoa", icon: UsersIcon },
+  { href: "#projects", text: "Proyektlar", icon: BriefcaseIcon },
   { href: "#contact", text: "Kontakt", icon: PhoneIcon },
 ]
 

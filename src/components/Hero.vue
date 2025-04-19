@@ -1,7 +1,7 @@
 <template>
   <section class="relative w-full min-h-screen bg-[#0f172a] text-white overflow-hidden px-6 md:px-20 py-20">
     <!-- Background Grid -->
-    <div class="fixed inset-0 bg-[url('/vibora-main.jpg')] opacity-5 z-0 bg-repeat-space bg-cover"></div>
+    <div class="fixed inset-0 bg-[url('/vibora-main.jpg')] opacity-5 z-0 bg-repeat-space"></div>
 
     <!-- Main content -->
     <div class="relative z-10 mt-24 flex flex-col items-center text-center space-y-6">
@@ -23,10 +23,10 @@
 
       <!-- CTA button -->
       <button class="bg-blue-500 text-black px-6 py-3 rounded-full hover:bg-[#5eead4] font-semibold transition-all">
-        Bog‘lanish
+        <a href="#contact"> Bog‘lanish uchun shu yerdamiz</a>
       </button>
     </div>
   </section>
 </template>
-<script setup lang="ts">
+<script setup>
 </script>

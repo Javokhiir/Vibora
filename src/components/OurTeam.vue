@@ -1,5 +1,5 @@
 <template>
-  <section class="relative min-h-screen py-16 overflow-hidden w-full">
+  <section id="team" class="relative min-h-screen py-16 overflow-hidden w-full">
     <div class="max-w-[1400px] mx-auto px-4 bg-gray-200 dark:bg-gray-800/60">
       <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800 dark:text-white">
         O'zuvizani bolla:
@@ -11,7 +11,7 @@
           :loop="true"
           :spaceBetween="15"
           @swiper="onSwiper"
-          :autoplay="{ delay: 2000, disableOnInteraction: true }"
+          :autoplay="{ delay: 10000, disableOnInteraction: true }"
           :breakpoints="{
           320: { slidesPerView: 1 },
           640: { slidesPerView: 1.2 },
@@ -35,7 +35,7 @@
                 <img
                     :src="member.photo"
                     alt="photo"
-                    class="w-20 h-20 sm:w-24 sm:h-24 md:w-52 md:h-52 rounded-[20%] object-cover border border-white/40 mb-4"
+                    class="w-36 h-36 sm:w-38 sm:h-38 md:w-52 md:h-52 rounded-[20%] object-cover border border-white/40 mb-4"
                 />
                 <h3 class="bg-white/20 dark:bg-gray-800/20 text-lg md:text-xl font-bold dark:text-white">
                   {{ member.name }}
@@ -60,21 +60,21 @@
                   class="flip-card-back w-full h-full rounded-2xl shadow-2xl border border-white/20 backdrop-blur-md  bg-white/30 dark:bg-gray-800/30 flex flex-col items-center justify-between px-4 py-6 text-center transition-all duration-500"
               >
                 <div>
-                  <h3 class="text-lg md:text-xl font-bold bg-white/70 dark:bg-gray-800/20">Qoʻshimcha</h3>
-                  <p class="text-xs md:text-sm mt-3 bg-white/70 dark:bg-gray-800/20">
+                  <h3 class="text-lg md:text-xl font-bold dark:bg-gray-800/20">Qoʻshimcha</h3>
+                  <p class="text-xs md:text-sm mt-3  dark:bg-gray-800/20">
                     Ijtimoiy tarmoqlar, kontaktlar yoki boshqa foydali info bu yerga tushadi.
                   </p>
                   <p class="mt-2">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium autem deleniti dicta eius enim illum iste iure, iusto laudantium molestias nemo, nisi praesentium quis repellendus veniam voluptas voluptatum. A ad aliquam deserunt dolor dolore earum ex illo iusto laborum libero molestias natus officia optio praesentium, quae quia quibusdam sapiente sit.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium autem deleniti dicta eius enim illum iste iure, iusto laudantium molestias nemo, nisi praesentium quis repellendus veniam voluptas voluptatum. A ad aliquam deserunt
                   </p>
                 </div>
 
                 <!-- Footer: Icons -->
-                <div class="flex gap-4 justify-center mt-6">
-                  <a href="#" target="_blank" class="bg-white/70 dark:bg-gray-800/20 hover:text-pink-500 transition">
+                <div class="flex gap-4 justify-center mt-2">
+                  <a href="#" target="_blank" class="dark:bg-gray-800/20 hover:text-pink-500 transition">
                     <i class="fab fa-instagram text-2xl"></i>
                   </a>
-                  <a href="#" target="_blank" class="bg-white/70 dark:bg-gray-800/20 hover:text-blue-400 transition">
+                  <a href="#" target="_blank" class=" dark:bg-gray-800/20 hover:text-blue-400 transition">
                     <i class="fab fa-telegram text-2xl"></i>
                   </a>
                 </div>
@@ -146,9 +146,9 @@ const team = [
   },
   {
     name: "Shohrux O'razqulov",
-    role: 'Mobilograf',
-    quote: '1000$ dan koʻp topaman! Menga qayerda ishlashni qizigʻi yoʻq😄',
-    photo: 'mobilograf.jpg',
+    role: 'Mobile Creator',
+    quote: 'San’at — bu qat’iyatning eng chiroyli ko‘rinishi',
+    photo: 'mobile1.jpg',
   },
 ]
 </script>
