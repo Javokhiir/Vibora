@@ -65,7 +65,7 @@
                     Ijtimoiy tarmoqlar, kontaktlar yoki boshqa foydali info bu yerga tushadi.
                   </p>
                   <p class="mt-2">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium autem deleniti dicta eius enim illum iste iure, iusto laudantium molestias nemo, nisi praesentium quis repellendus veniam voluptas voluptatum. A ad aliquam deserunt
+                    Marketing bo'yicha aniq strategik va analizlar bilan ishlash. PR bo'yicha antikrizis jarayonlarini boshqarish va mijozlar bilan to'g'ri muloqot qilish bo'yicha soft va hard ko'nikmalarim mavjud. Marketing bo'yicha 5 yilga yaqin tajribam, PR bo'yicha 2yil tajribaga egaman. O'z qadriyatlarim va standartlarimdan chekaga chiqmagan xolda ishlayman.
                   </p>
                 </div>
 
@@ -139,13 +139,13 @@ const team = [
     photo: 'grafik-dizayner.jpg',
   },
   {
-    name: 'Soyibjon Bahtiyorov',
+    name: 'Soyibjon Baxtiyorov',
     role: 'Senarist',
     quote: 'Ssenariylarim Oʻzbekfilmdaqamas lekin! Ularni ham tanimayman🎯',
     photo: 'senarist.jpg',
   },
   {
-    name: "Shohrux O'razqulov",
+    name: "Shohruh O'razqulov",
     role: 'Mobile Creator',
     quote: 'San’at — bu qat’iyatning eng chiroyli ko‘rinishi',
     photo: 'mobile1.jpg',

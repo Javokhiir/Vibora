@@ -49,7 +49,7 @@
           <p class="text-gray-600 dark:text-gray-300 mb-1">📣 Biz haqimizda qayerdan eshitgansiz?</p>
           <Listbox v-model="selectedReferral">
             <div class="relative w-full">
-              <ListboxButton class="select-style">
+              <ListboxButton class="select-style ">
                 {{ selectedReferral || 'Manbani tanlang...' }}
                 <ChevronDown class="w-4 h-4 text-gray-400 ml-auto" />
               </ListboxButton>
@@ -79,7 +79,7 @@
             :disabled="!verified"
             class="relative group w-full h-12 bg-blue-500 text-white font-semibold rounded-xl overflow-hidden shadow-md hover:shadow-blue-glow transition-all"
         >
-          <span class="relative z-10">✉️ Xabarni yuborish</span>
+          <span class="relative z-9">✉️ Xabarni yuborish</span>
           <span class="absolute inset-0 bg-blue-600 group-hover:scale-110 transition-transform duration-300 blur-sm opacity-40"></span>
         </button>
       </form>
@@ -91,7 +91,6 @@
 import { ref } from 'vue'
 import { Listbox, ListboxButton, ListboxOptions, ListboxOption } from '@headlessui/vue'
 import { ChevronDown, Check } from 'lucide-vue-next'
-import SwipeVerify from './SwipeVerify.vue'
 
 const verified = ref(false)
 
