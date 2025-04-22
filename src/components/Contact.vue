@@ -32,6 +32,7 @@
                  placeholder="Telefon raqamingiz"
                  class="input-style"
                  required
+                 :options="numberList"
           >
         </div>
 
@@ -175,6 +176,8 @@ const formData = ref({
   referral: '',
   message: ''
 })
+
+
 
 const selectedBusiness = ref(null)
 const selectedReferral = ref(null)
