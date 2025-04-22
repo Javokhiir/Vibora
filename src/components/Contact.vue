@@ -151,14 +151,14 @@ Xabar: ${formData.value.message}
 
     if (response.ok) {
       toast.success('Xabaringiz muvaffaqiyatli yuborildi!', {
-        timeout: 3000,
-        icon: '✅'})
+        timeout: 5000,
+        icon: '💀'})
       formData.value = { name: '', email: '', number:'', businessType: '', referral: '', message: '' }
       selectedBusiness.value = null
       selectedReferral.value = null
     } else {
       toast.error('Xabarni yuborishda xatolik', {
-        timeout: 3000,
+        timeout: 5000,
         icon: '❌'
       })
     }
