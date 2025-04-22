@@ -1,7 +1,6 @@
 <template>
   <section id="contact" class="min-h-screen flex items-center justify-center px-4 py-16 bg-gradient-to-b from-white to-gray-100 dark:from-[#0f0f0f] dark:to-[#1a1a1a]">
     <div class="max-w-3xl w-full bg-white/70 dark:bg-white/5 backdrop-blur-lg border border-gray-200 dark:border-gray-700 rounded-2xl shadow-2xl p-8 md:p-12 space-y-6 transition-all">
-
       <!-- Title -->
       <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 dark:text-white">
         📡 Aloqa markazi
@@ -11,14 +10,31 @@
       </p>
 
       <!-- Form -->
-      <form class="space-y-4">
+      <form @submit.prevent="submitForm" class="space-y-4">
         <!-- Ism & Email -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <input type="text" placeholder="Ismingiz" class="input-style" />
-          <input type="email" placeholder="Email manzilingiz" class="input-style" />
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <input
+              v-model="formData.name"
+              type="text"
+              placeholder="Ismingiz"
+              class="input-style"
+              required
+          />
+          <input
+              v-model="formData.email"
+              type="email"
+              placeholder="Email manzilingiz"
+              class="input-style"
+              required
+          />
+          <input type="number"
+          v-model="formData.number"
+                 placeholder="Telefon raqamingiz"
+                 class="input-style"
+                 required
+          >
         </div>
 
-        <!-- Biznes turi & Qayerdan eshitgan -->
         <!-- Biznes turi -->
         <div>
           <p class="text-gray-600 dark:text-gray-300 mb-1">💼 Biznes turini tanlang</p>
@@ -49,7 +65,7 @@
           <p class="text-gray-600 dark:text-gray-300 mb-1">📣 Biz haqimizda qayerdan eshitgansiz?</p>
           <Listbox v-model="selectedReferral">
             <div class="relative w-full">
-              <ListboxButton class="select-style ">
+              <ListboxButton class="select-style">
                 {{ selectedReferral || 'Manbani tanlang...' }}
                 <ChevronDown class="w-4 h-4 text-gray-400 ml-auto" />
               </ListboxButton>
@@ -69,18 +85,24 @@
           </Listbox>
         </div>
 
-
         <!-- Message -->
-        <textarea placeholder="Xabaringiz..." rows="5" class="input-style resize-none"></textarea>
+        <textarea
+            v-model="formData.message"
+            placeholder="Xabaringiz..."
+            rows="5"
+            class="input-style resize-none"
+            required
+        ></textarea>
 
         <!-- Submit -->
         <button
             type="submit"
-            :disabled="!verified"
-            class="relative group w-full h-12 bg-blue-500 text-white font-semibold rounded-xl overflow-hidden shadow-md hover:shadow-blue-glow transition-all"
+            class="relative group w-full h-12 bg-blue-500 text-white font-semibold rounded-xl overflow-hidden shadow-md hover:shadow-blue-glow transition-all disabled:opacity-50"
         >
-          <span class="relative z-9">✉️ Xabarni yuborish</span>
-          <span class="absolute inset-0 bg-blue-600 group-hover:scale-110 transition-transform duration-300 blur-sm opacity-40"></span>
+          <span class="relative z-9">
+            {{ isSubmitting ? 'Yuborilmoqda...' : '✉️ Xabarni yuborish' }}
+          </span>
+          <span class="absolute bg-blue-600 group-hover:scale-110 transition-transform duration-300 blur-sm opacity-40"></span>
         </button>
       </form>
     </div>
@@ -91,11 +113,68 @@
 import { ref } from 'vue'
 import { Listbox, ListboxButton, ListboxOptions, ListboxOption } from '@headlessui/vue'
 import { ChevronDown, Check } from 'lucide-vue-next'
+import { useToast } from 'vue-toastification'
 
-const verified = ref(false)
 
-const businessOptions = ['Onlayn Do‘kon', 'Marketing Agentligi', 'Shaxsiy Brend', 'Startap', 'Boshqa']
-const referralOptions = ['Instagram', 'Google', 'Do‘st', 'Reklama', 'Boshqa']
+const toast = useToast()
+
+const businessOptions = ['Onlayn Do‘kon', 'O\'quv markaz', 'Shaxsiy Brend', 'Startap', 'Boshqa']
+const referralOptions = ['Instagram', 'Google', 'Do‘st', 'Telegram', 'Boshqa']
+
+const TELEGRAM_BOT_TOKEN = '7299238574:AAGRXjkNXQfKQVRhWVKx9pVTo5vJyrTd9jE' // bot token
+const TELEGRAM_CHAT_ID = '1306798323' // admin id
+const TELEGRAM_API = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`
+
+const submitForm = async () => {
+  try {
+    const message = `
+Yangi xabar:
+Ism: ${formData.value.name}
+Email: ${formData.value.email}
+Raqami: ${formData.value.number}
+Biznes Turi: ${selectedBusiness.value || 'Tanlanmagan'}
+Qayerdan eshitgan: ${selectedReferral.value || 'Tanlanmagan'}
+Xabar: ${formData.value.message}
+    `
+
+    const response = await fetch(TELEGRAM_API, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        chat_id: TELEGRAM_CHAT_ID,
+        text: message,
+        parse_mode: 'HTML'
+      })
+    })
+
+    if (response.ok) {
+      toast.success('Xabaringiz muvaffaqiyatli yuborildi!', {
+        timeout: 3000,
+        icon: '✅'})
+      formData.value = { name: '', email: '', number:'', businessType: '', referral: '', message: '' }
+      selectedBusiness.value = null
+      selectedReferral.value = null
+    } else {
+      toast.error('Xabarni yuborishda xatolik', {
+        timeout: 3000,
+        icon: '❌'
+      })
+    }
+  } catch (error) {
+    console.error('Error:', error)
+    this.$toast.error(error.message)
+  }
+}
+const formData = ref({
+  name: '',
+  email: '',
+  number: '',
+  businessType: '',
+  referral: '',
+  message: ''
+})
 
 const selectedBusiness = ref(null)
 const selectedReferral = ref(null)

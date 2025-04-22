@@ -21,7 +21,7 @@
           Bu yerda <span class="text-blue-500 font-semibold">sizni biznesingiz</span> boʻlishi mumkin edi.
         </p>
         <div class="mt-6 animate-pulse text-sm text-gray-500 dark:text-gray-400">
-          Yaqinda bu yer jonlanadi...
+          Hali ham kechmas...
         </div>
       </div>
     </div>

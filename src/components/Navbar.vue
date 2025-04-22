@@ -10,7 +10,7 @@
 
   <!-- Navbar -->
   <header class="w-full sticky top-0 z-50 bg-white/70 dark:bg-gray-800/60 backdrop-blur-md shadow-md rounded-b-xl">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-1">
       <!-- Animated Logo Switch -->
       <div class="relative w-48 h-12 flex items-center justify-start overflow-hidden">
         <transition name="fade" mode="out-in">
@@ -44,19 +44,12 @@
 
         <!-- Desktop Nav -->
         <nav class="hidden lg:flex">
-          <ul class="flex flex-wrap justify-center space-x-8 text-gray-800 dark:text-gray-200">
-            <li
-                v-for="(link) in links"
-                :key="link.href"
-                class="group font-poppins font-semibold relative"
-            >
-              <div class="flex items-center gap-2 cursor-pointer">
-                <component :is="link.icon" class="w-6 h-6 text-gray-800 dark:text-white " />
-              </div>
-
-              <div
-                  class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 text-xs text-black dark:text-white px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-lg"
-              >
+          <ul class="flex flex-wrap justify-center space-x-8">
+            <li v-for="link in links" :key="link.text" class="relative group">
+              <a :href="link.href" class="flex items-center justify-center w-8 h-8 text-gray-800 dark:text-gray-200 hover:text-blue-500 transition">
+                <component :is="link.icon" class="w-6 h-6" />
+              </a>
+              <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 text-xs text-black dark:text-white px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-lg">
                 {{ link.text }}
               </div>
             </li>
@@ -65,11 +58,11 @@
 
         <!-- Theme Toggle Button -->
         <div class="relative group">
-          <button @click="toggleTheme" class="text-gray-800 dark:text-white flex items-center justify-center">
+          <button @click="toggleTheme" class="text-gray-800 dark:text-white  flex items-center justify-center">
             <component :is="isDarkMode ? SunIcon : MoonIcon" class="w-6 h-6" />
           </button>
           <div
-              class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 text-xs text-black dark:text-white px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-lg"
+              class="absolute top-full left-1/6 transform -translate-x-1/2 mt-2 text-xs text-black dark:text-white px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-lg"
           >
             {{ isDarkMode ? 'Kun' : 'Tun' }}
           </div>
@@ -108,7 +101,7 @@ const links = [
   { href: "#team", text: "Jamoa", icon: UsersIcon },
   { href: "#projects", text: "Proyektlar", icon: BriefcaseIcon },
   { href: "#price", text: "Narxlar", icon: BanknotesIcon },
-  { href: "#contact", text: "Kontakt", icon: PhoneIcon },
+  { href: "#contact", text: "Kontakt", icon: PhoneIcon }
 
 ]
 
