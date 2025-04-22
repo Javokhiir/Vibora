@@ -1,5 +1,5 @@
 <template>
-  <div class="relative bg-white dark:bg-gray-900 py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+  <div id="price" class="relative bg-white dark:bg-gray-900 py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
     <!-- Blur background -->
     <div class="absolute inset-0 z-0 backdrop-blur-3xl bg-white/30 dark:bg-gray-800/30 rounded-[3rem] scale-110"></div>
 

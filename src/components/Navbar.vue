@@ -50,12 +50,10 @@
                 :key="link.href"
                 class="group font-poppins font-semibold relative"
             >
-              <div class="flex items-center gap-2 ">
+              <div class="flex items-center gap-2 cursor-pointer">
                 <component :is="link.icon" class="w-6 h-6 text-gray-800 dark:text-white " />
               </div>
-              <span
-                  class="absolute  bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#4299e1] to-[#16a085] transition-all duration-300 group-hover:w-full rounded"
-              ></span>
+
               <div
                   class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 text-xs text-black dark:text-white px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-lg"
               >
@@ -97,8 +95,9 @@
 </template>
 <script setup>
 import { ref, onMounted } from 'vue'
-import { Bars3Icon, XMarkIcon, SunIcon, MoonIcon, HomeIcon, InformationCircleIcon, BriefcaseIcon, UsersIcon, PhoneIcon } from "@heroicons/vue/24/outline"
+import { Bars3Icon, XMarkIcon, SunIcon, MoonIcon, HomeIcon, InformationCircleIcon, BriefcaseIcon, UsersIcon, PhoneIcon, BanknotesIcon } from "@heroicons/vue/24/outline"
 import Hero from "./Hero.vue";
+
 
 const isMenuOpen = ref(false)
 const isLogoImage = ref(true)
@@ -108,7 +107,9 @@ const links = [
   { href: "#about", text: "Biz Haqimizda", icon: InformationCircleIcon },
   { href: "#team", text: "Jamoa", icon: UsersIcon },
   { href: "#projects", text: "Proyektlar", icon: BriefcaseIcon },
+  { href: "#price", text: "Narxlar", icon: BanknotesIcon },
   { href: "#contact", text: "Kontakt", icon: PhoneIcon },
+
 ]
 
 // Toggle theme
