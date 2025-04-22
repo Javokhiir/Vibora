@@ -183,7 +183,7 @@ const plans = {
     },
     {
       name: '3 oy',
-      price: '$2100',
+      price: '$2500',
       features: ['Har kunlik postlar', 'PR strategiya va analiz', 'Oylik hisobot ', '1 sahifali web-sayt tayyorlab berish'],
     },
     {
@@ -208,7 +208,7 @@ const plans = {
     },
     {
       name: '3 oy',
-      price: '$2800',
+      price: '$2900',
       features: ['Haftasiga 4 ta post', 'PR strategiya va analiz', 'CRM tizimini yoʻlga qoʻyish', '2-5 sahifali web-sayt tayyorlab berish', 'Oylik hisobot'],
     },
     {
