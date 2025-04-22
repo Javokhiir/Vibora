@@ -4,8 +4,10 @@
     <About />
     <OurTeam />
     <Projects />
+    <PriceList/>
     <Contact />
     <Footer />
+
   </div>
 </template>
 
@@ -16,5 +18,6 @@ import Projects from "./components/Projects.vue";
 import OurTeam from "./components/OurTeam.vue";
 import Contact from "./components/Contact.vue";
 import Footer from "./components/Footer.vue";
-import Hero from "./components/Hero.vue";
+import PriceList from "./components/PriceList.vue";
+
 </script>

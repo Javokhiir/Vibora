@@ -14,7 +14,7 @@
       <div>
         <h2 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">Sayt bo'limlari</h2>
         <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-          <li><a href="#home" class="hover:text-blue-500 transition">Bosh sahifa</a></li>
+          <li><a href="#" class="hover:text-blue-500 transition">Bosh sahifa</a></li>
           <li><a href="#about" class="hover:text-blue-500 transition">Biz haqimizda</a></li>
           <li><a href="#projects" class="hover:text-blue-500 transition">Loyihalar</a></li>
           <li><a href="#team" class="hover:text-blue-500 transition">Jamoamiz</a></li>

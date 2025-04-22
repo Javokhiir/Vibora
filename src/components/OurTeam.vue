@@ -29,53 +29,28 @@
                 @click="flipCard(i)"
             >
               <!-- Front Side -->
-              <div
-                  class="flip-card-front  w-full h-full rounded-2xl shadow-2xl border border-white/20 backdrop-blur-md bg-white/30 dark:bg-gray-800/30 flex flex-col items-center justify-center px-4 py-6 text-center transition-all duration-500"
-              >
-                <img
-                    :src="member.photo"
-                    alt="photo"
-                    class="w-36 h-36 sm:w-38 sm:h-38 md:w-52 md:h-52 rounded-[20%] object-cover border border-white/40 mb-4"
-                />
-                <h3 class="bg-white/20 dark:bg-gray-800/20 text-lg md:text-xl font-bold dark:text-white">
-                  {{ member.name }}
-                </h3>
-                <p class="bg-white/20 dark:bg-gray-800/20 text-sm md:text-base dark:text-white">
-                  {{ member.role }}
-                </p>
-                <p
-                    class="bg-white/20 dark:bg-gray-800/20 text-xs md:text-sm italic mt-3 max-w-[240px] sm:max-w-[260px] dark:text-white"
-                >
-                  “{{ member.quote }}”
-                </p>
+              <div class="flip-card-front w-full h-full rounded-2xl shadow-2xl border border-white/20 backdrop-blur-md bg-white/30 dark:bg-gray-800/30 flex flex-col items-center justify-center px-4 py-6 text-center transition-all duration-500">
+                <img :src="member.photo" alt="photo" class="w-36 h-36 md:w-52 md:h-52 rounded-[20%] object-cover border border-white/40 mb-4" />
+                <h3 class="bg-white/20 dark:bg-gray-800/20 text-lg md:text-xl font-bold dark:text-white">{{ member.name }}</h3>
+                <p class="bg-white/20 dark:bg-gray-800/20 text-sm md:text-base dark:text-white">{{ member.role }}</p>
+                <p class="bg-white/20 dark:bg-gray-800/20 text-xs md:text-sm italic mt-3 max-w-[260px] dark:text-white">“{{ member.quote }}”</p>
                 <div
-                    class="relative top-full left-1/2 transform -translate-x-1/2 mt-2 text-xs text-black dark:text-white px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-lg"
+                    class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 text-xs text-black dark:text-white px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-lg"
                 >
-                 Bosing
+                  Orqasini ko‘rish
                 </div>
               </div>
 
               <!-- Back Side -->
-              <div
-                  class="flip-card-back w-full h-full rounded-2xl shadow-2xl border border-white/20 backdrop-blur-md  bg-white/30 dark:bg-gray-800/30 flex flex-col items-center justify-between px-4 py-6 text-center transition-all duration-500"
-              >
+              <div class="flip-card-back w-full h-full rounded-2xl shadow-2xl border border-white/20 backdrop-blur-md bg-white/30 dark:bg-gray-800/30 flex flex-col items-center justify-between px-4 py-6 text-center transition-all duration-500">
                 <div>
                   <h3 class="text-lg md:text-xl font-bold dark:bg-gray-800/20">Qoʻshimcha</h3>
-                  <p class="text-xs md:text-sm mt-3  dark:bg-gray-800/20">
-                    Ijtimoiy tarmoqlar, kontaktlar yoki boshqa foydali info bu yerga tushadi.
-                  </p>
-                  <p class="mt-2">
-                    Marketing bo'yicha aniq strategik va analizlar bilan ishlash. PR bo'yicha antikrizis jarayonlarini boshqarish va mijozlar bilan to'g'ri muloqot qilish bo'yicha soft va hard ko'nikmalarim mavjud. Marketing bo'yicha 5 yilga yaqin tajribam, PR bo'yicha 2yil tajribaga egaman. O'z qadriyatlarim va standartlarimdan chekaga chiqmagan xolda ishlayman.
-                  </p>
+                  <p class="mt-2 text-xs md:text-sm dark:text-white">{{ member.details }}</p>
                 </div>
 
-                <!-- Footer: Icons -->
                 <div class="flex gap-4 justify-center mt-2">
-                  <a href="#" target="_blank" class="dark:bg-gray-800/20 hover:text-pink-500 transition">
-                    <i class="fab fa-instagram text-2xl"></i>
-                  </a>
-                  <a href="#" target="_blank" class=" dark:bg-gray-800/20 hover:text-blue-400 transition">
-                    <i class="fab fa-telegram text-2xl"></i>
+                  <a v-for="(icon, idx) in member.socials" :key="idx" :href="icon.link" target="_blank" :class="icon.class">
+                    <i :class="icon.icon" class="text-2xl"></i>
                   </a>
                 </div>
               </div>
@@ -87,6 +62,7 @@
   </section>
 </template>
 
+
 <script setup>
 import { ref, watch } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
@@ -95,6 +71,7 @@ import { Autoplay } from 'swiper/modules'
 
 const swiperRef = ref(null)
 const flippedCard = ref(null)
+
 const flipCard = (index) => {
   flippedCard.value = flippedCard.value === index ? null : index
 }
@@ -105,11 +82,7 @@ const onSwiper = (swiperInstance) => {
 
 watch(flippedCard, (newVal) => {
   if (swiperRef.value) {
-    if (newVal !== null) {
-      swiperRef.value.autoplay.stop()
-    } else {
-      swiperRef.value.autoplay.start()
-    }
+    newVal !== null ? swiperRef.value.autoplay.stop() : swiperRef.value.autoplay.start()
   }
 })
 
@@ -119,39 +92,70 @@ const team = [
     role: 'PR mutaxassis',
     quote: "Xoʻoʻoʻoʻoʻsh??? Nima muammo okya!?",
     photo: 'javohir-pr.jpg',
+    details: 'Marketing bo\'yicha aniq strategik va analizlar bilan ishlash. PR bo\'yicha antikrizis jarayonlarini boshqarish va mijozlar bilan to\'g\'ri muloqot qilish bo\'yicha soft va hard ko\'nikmalarim mavjud. Marketing bo\'yicha 5 yilga yaqin tajribam, PR bo\'yicha 2yil tajribaga egaman. O\'z qadriyatlarim va standartlarimdan chekaga chiqmagan xolda ishlayman.',
+    socials: [
+      { icon: 'fab fa-instagram', link: 'https://www.instagram.com/javohir_yaxshilikovich?igsh=MXRqbnY5YjJmd2N5Mw==', class: 'hover:text-pink-500 transition' },
+      { icon: 'fab fa-telegram', link: 'https://t.me/bazarolog', class: 'hover:text-blue-400 transition' },
+    ],
   },
   {
     name: 'Xursand Amir Temurov',
     role: 'Ambassador',
     quote: "Andig'oid bo'lmiman j**😭",
     photo: 'ambassador.jpg',
+    details: 'Brend strategiyalari, ijtimoiy loyiha yuritish, tadbirlar.',
+    socials: [
+      { icon: 'fab fa-instagram', link: 'https://www.instagram.com/xursanddev?igsh=MW93Z29kaGgzdTZ6MA==', class: 'hover:text-pink-500 transition' },
+      { icon: 'fab fa-telegram', link: 'https://t.me/xursand_toga', class: 'hover:text-blue-400 transition' },
+    ],
   },
   {
     name: 'Javohir Shaxriyorov',
     role: 'Dasturchi',
     quote: "Ha otam👀 Bormi og'riq?!",
     photo: 'javohir2.jpg',
+    details: 'SPA, SSR, API integratsiya. Yangi texnologiyalarni joriy qilish.',
+    socials: [
+      { icon: 'fab fa-instagram', link: 'https://www.instagram.com/javohir_shaxriyorov?igsh=ZG9sd2xweGV5bXg1', class: 'hover:text-pink-500 transition' },
+      { icon: 'fab fa-telegram', link: 'https://t.me/shaxriyorov_j', class: 'hover:text-blue-400 transition' },
+    ],
   },
   {
     name: 'Javohir Jumanov',
     role: 'Grafik Dizayner',
     quote: "Potoshop boʻyicha 22 yillik tajribaga ega 20 yoshli dizaynerman🥸",
     photo: 'grafik-dizayner.jpg',
+    details: 'Adobe Photoshop, Illustrator. Minimalizm va estetika ustuvor.',
+    socials: [
+      { icon: 'fab fa-instagram', link: 'https://www.instagram.com/javokhiriy?igsh=MXEwZTFub2NyaHdhMg==', class: 'hover:text-pink-500 transition' },
+      { icon: 'fab fa-telegram', link: 'https://t.me/javokhirjumanov', class: 'hover:text-blue-400 transition' },
+    ],
   },
   {
     name: 'Soyibjon Baxtiyorov',
     role: 'Senarist',
     quote: 'Ssenariylarim Oʻzbekfilmdaqamas lekin! Ularni ham tanimayman🎯',
     photo: 'senarist.jpg',
+    details: 'Kreativ yozuv, dialoglar, qisqa metrajli videolar uchun g‘oyalar.',
+    socials: [
+      { icon: 'fab fa-instagram', link: 'https://www.instagram.com/soyibjonbakhtiyorov?igsh=aDkzZDFmOW1tcHEx', class: 'hover:text-pink-500 transition' },
+      { icon: 'fab fa-telegram', link: 'https://t.me/baxtiyorovsoyibjon', class: 'hover:text-blue-400 transition' },
+    ],
   },
   {
     name: "Shohruh O'razqulov",
     role: 'Mobile Creator',
     quote: 'San’at — bu qat’iyatning eng chiroyli ko‘rinishi',
     photo: 'mobile1.jpg',
+    details: 'CapCut, VN, InShot’da kreativ videolar yaratadi.',
+    socials: [
+      { icon: 'fab fa-instagram', link: 'https://www.instagram.com/uzuvzan_bola?igsh=MWgzYmtlZ3BweHltaQ==', class: 'hover:text-pink-500 transition' },
+      { icon: 'fab fa-telegram', link: 'https://t.me/uzuvzan_bola', class: 'hover:text-blue-400 transition' },
+    ],
   },
 ]
 </script>
+
 
 <style scoped>
 .team-swiper {
@@ -162,7 +166,6 @@ const team = [
   justify-content: center;
   align-items: center;
 }
-
 .flip-card {
   perspective: 1000px;
 }
@@ -189,3 +192,4 @@ const team = [
   transform: rotateY(180deg);
 }
 </style>
+
