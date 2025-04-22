@@ -16,8 +16,9 @@
         <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
           <li><a href="#" class="hover:text-blue-500 transition">Bosh sahifa</a></li>
           <li><a href="#about" class="hover:text-blue-500 transition">Biz haqimizda</a></li>
+          <li><a href="#team" class="hover:text-blue-500 transition">Jamoa</a></li>
           <li><a href="#projects" class="hover:text-blue-500 transition">Loyihalar</a></li>
-          <li><a href="#team" class="hover:text-blue-500 transition">Jamoamiz</a></li>
+          <li><a href="#price" class="hover:text-blue-500 transition">Tarif</a></li>
           <li><a href="#contact" class="hover:text-blue-500 transition">Aloqa</a></li>
         </ul>
       </div>

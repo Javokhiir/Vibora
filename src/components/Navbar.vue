@@ -99,8 +99,8 @@ const links = [
   { href: "#", text: "Uy", icon: HomeIcon },
   { href: "#about", text: "Biz Haqimizda", icon: InformationCircleIcon },
   { href: "#team", text: "Jamoa", icon: UsersIcon },
-  { href: "#projects", text: "Proyektlar", icon: BriefcaseIcon },
-  { href: "#price", text: "Narxlar", icon: BanknotesIcon },
+  { href: "#projects", text: "Loyihalar", icon: BriefcaseIcon },
+  { href: "#price", text: "Tarif", icon: BanknotesIcon },
   { href: "#contact", text: "Kontakt", icon: PhoneIcon }
 
 ]
