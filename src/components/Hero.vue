@@ -1,7 +1,7 @@
 <template>
   <section class="relative w-full min-h-screen bg-[#0f172a] text-white overflow-hidden px-6 md:px-20 py-20">
     <!-- Background Grid -->
-    <div class="fixed inset-0 bg-[url('/vibora-main.jpg')] opacity-5 z-0 bg-repeat-space"></div>
+    <div class="fixed inset-0 bg-[url('/vibora-mobile.png')] bg-cover bg-center bg-no-repeat h-screen w-full opacity-5 z-0 sm:bg-[url('/vibora-main.jpg')]"></div>
 
     <!-- Main content -->
     <div class="relative z-10 mt-24 flex flex-col items-center text-center space-y-6">

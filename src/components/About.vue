@@ -1,5 +1,5 @@
 <template>
-  <section id="about" class="py-20 bg-gradient-to-r from-gray-100 to-gray-200">
+  <section id="about" class="py-20 bg-gradient-to-r bg-blur-2 from-gray-100 to-white dark:from-[#0f0f0f] dark:to-[#1a1a1a]">
     <div class="container mx-auto px-6 text-center">
       <h2 class="text-4xl font-bold text-tiffany-500 mb-6">Biz Haqimizda</h2>
       <p class="text-lg text-gray-700 mb-12 max-w-3xl mx-auto">
@@ -10,7 +10,7 @@
       <div class="flex flex-wrap justify-center gap-8">
         <!-- Card 1 -->
         <div class="w-full md:w-1/3 p-4 transform hover:scale-105 transition duration-300">
-          <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl group">
+          <div class="bg-white/30 dark:bg-gray-800/30 p-8 rounded-xl shadow-lg hover:shadow-2xl group">
             <div class="h-64 bg-tiffany-100 rounded-xl overflow-hidden mb-6">
               <img src="/vi-logo.png" alt="Image 1" class="object-cover w-full h-full group-hover:scale-110 transition-all duration-500" />
             </div>
