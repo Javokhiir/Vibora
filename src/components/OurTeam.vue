@@ -9,16 +9,16 @@
           :slides-per-view="3"
           :centeredSlides="true"
           :loop="true"
-          :spaceBetween="15"
+          :spaceBetween="10"
           @swiper="onSwiper"
-          :autoplay="{ delay: 10000, disableOnInteraction: true }"
+          :autoplay="{ delay: 1000, disableOnInteraction: false }"
           :breakpoints="{
-          320: { slidesPerView: 1 },
-          640: { slidesPerView: 1.2 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-          1280: { slidesPerView: 3 }
-        }"
+    320: { slidesPerView: 2 },
+    640: { slidesPerView: 2 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 },
+    1280: { slidesPerView: 3 }
+  }"
           class="team-swiper"
       >
         <swiper-slide v-for="(member, i) in team" :key="i">
