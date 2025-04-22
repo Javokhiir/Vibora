@@ -178,50 +178,52 @@ const plans = {
   oddiy: [
     {
       name: '1 oy',
-      price: '$800',
-      features: ['3 ta post/hafta', 'Asosiy tahlil'],
-    },
-    {
-      name: '3 oy',
-      price: '$1500',
-      features: ['Kunlik postlar', 'To‘liq tahlil', '1 video/oy', '1 reels/oy'],
-    },
-    {
-      name: 'Yillik',
-      price: '$9000',
-      features: [
-        'Cheksiz postlar',
-        'Advanced analytics',
-        '3 video/oy',
-        '4 reels/oy',
-        'Influencer campaign',
-        'Target ads boshqaruvi',
-      ],
-    },
-  ],
-  pro: [
-    {
-      name: '1 oy',
       price: '$1000',
-      features: ['12 ta post', 'Asosiy tahlil'],
+      features: ['Haftasiga 3 ta post ', 'Haftalık va oylik tahlil', 'PR strategiya'],
     },
     {
       name: '3 oy',
-      price: '$2990',
-      features: ['Kunlik postlar', 'To‘liq tahlil', '25 ta post', '30 ta reels', '3 oylik hisobot'],
+      price: '$2100',
+      features: ['Har kunlik postlar', 'PR strategiya va analiz', 'Oylik hisobot ', '1 sahifali web-sayt tayyorlab berish'],
     },
     {
       name: 'Yillik',
       price: '$12990',
       features: [
         'Cheksiz postlar',
-        'Advanced analytics',
-        '3 video/oy',
-        '4 reels/oy',
-        'Influencer campaign',
+        'PR analiz va strategiya',
+        '10 ta post oyiga',
+        '15 ta reels oyiga',
+        '1-5 sahifali web-sayt tayyorlab berish',
         'Target ads boshqaruvi',
-        'Dedicated account manager',
-        'PR strategiya rejasi',
+          'Brend darajaga olib chiqish'
+      ],
+    },
+  ],
+  pro: [
+    {
+      name: '1 oy',
+      price: '$1300',
+      features: ['Haftasiga 4 ta post', 'Matbuot bilan hamkorlik', 'Oylik analizlar', 'PR analiz va strategiya'],
+    },
+    {
+      name: '3 oy',
+      price: '$2800',
+      features: ['Haftasiga 4 ta post', 'PR strategiya va analiz', 'CRM tizimini yoʻlga qoʻyish', '2-5 sahifali web-sayt tayyorlab berish', 'Oylik hisobot'],
+    },
+    {
+      name: 'Yillik',
+      price: '$14990',
+      features: [
+        'Cheksiz postlar',
+        'PR analiz va strategiya',
+        '15 ta post oyiga',
+        '20 ta reels oyiga',
+        '1-20 sahifali web-sayt tayyorlash',
+        'CRM tizimini yoʻlga qoʻyish',
+        'Brend darajaga olib chiqish',
+        'Matbuot bilan hamkorlik',
+          'ROP'
       ],
     },
   ],

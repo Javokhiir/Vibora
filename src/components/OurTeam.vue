@@ -34,11 +34,7 @@
                 <h3 class="bg-white/20 dark:bg-gray-800/20 text-lg md:text-xl font-bold dark:text-white">{{ member.name }}</h3>
                 <p class="bg-white/20 dark:bg-gray-800/20 text-sm md:text-base dark:text-white">{{ member.role }}</p>
                 <p class="bg-white/20 dark:bg-gray-800/20 text-xs md:text-sm italic mt-3 max-w-[260px] dark:text-white">“{{ member.quote }}”</p>
-                <div
-                    class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 text-xs text-black dark:text-white px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-lg"
-                >
-                  Orqasini ko‘rish
-                </div>
+                <span class="flip-hint mt-8 animate-bounce">Batafsil...</span>
               </div>
 
               <!-- Back Side -->
@@ -114,7 +110,7 @@ const team = [
     role: 'Dasturchi',
     quote: "Ha otam👀 Bormi og'riq?!",
     photo: 'javohir2.jpg',
-    details: 'SPA, SSR, API integratsiya. Yangi texnologiyalarni joriy qilish.',
+    details: 'Kreativlikni birinchilikka qo‘ygan Frontend dasturchiman. JavaScript,Tailwind CSS va Vue Js frameworklari asosida funksional, zamonaviy va jozibali interfeyslar ishlab chiqaman. Responsiv dizayn, animatsiyalar, i18n va estetikani uyg‘unlashtirib, har bir loyihada o‘ziga xoslik va sifatni birinchi ko\'rsatib beraman',
     socials: [
       { icon: 'fab fa-instagram', link: 'https://www.instagram.com/javohir_shaxriyorov?igsh=ZG9sd2xweGV5bXg1', class: 'hover:text-pink-500 transition' },
       { icon: 'fab fa-telegram', link: 'https://t.me/shaxriyorov_j', class: 'hover:text-blue-400 transition' },
@@ -136,7 +132,7 @@ const team = [
     role: 'Senarist',
     quote: 'Ssenariylarim Oʻzbekfilmdaqamas lekin! Ularni ham tanimayman🎯',
     photo: 'senarist.jpg',
-    details: 'Kreativ yozuv, dialoglar, qisqa metrajli videolar uchun g‘oyalar.',
+    details: 'Kreativ ssenariy, dialoglar, qisqa metrajli videolar uchun g‘oyalar beraman.',
     socials: [
       { icon: 'fab fa-instagram', link: 'https://www.instagram.com/soyibjonbakhtiyorov?igsh=aDkzZDFmOW1tcHEx', class: 'hover:text-pink-500 transition' },
       { icon: 'fab fa-telegram', link: 'https://t.me/baxtiyorovsoyibjon', class: 'hover:text-blue-400 transition' },
@@ -147,7 +143,7 @@ const team = [
     role: 'Mobile Creator',
     quote: 'San’at — bu qat’iyatning eng chiroyli ko‘rinishi',
     photo: 'mobile1.jpg',
-    details: 'CapCut, VN, InShot’da kreativ videolar yaratadi.',
+    details: 'CapCut, VN, InShot’da kreativ videolar yarataman.',
     socials: [
       { icon: 'fab fa-instagram', link: 'https://www.instagram.com/uzuvzan_bola?igsh=MWgzYmtlZ3BweHltaQ==', class: 'hover:text-pink-500 transition' },
       { icon: 'fab fa-telegram', link: 'https://t.me/uzuvzan_bola', class: 'hover:text-blue-400 transition' },
@@ -190,6 +186,13 @@ const team = [
 }
 .flip-card-back {
   transform: rotateY(180deg);
+}
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 </style>
 
