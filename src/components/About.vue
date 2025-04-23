@@ -15,7 +15,7 @@
               <img src="/vi-logo.png" alt="Image 1" class="object-cover w-full h-full group-hover:scale-110 transition-all duration-500" />
             </div>
             <h3 class="text-2xl font-semibold text-gray-800 mb-2 group-hover:text-tiffany-500 transition duration-300">Yaratilish va Innovatsiya</h3>
-            <p class="dark:text-white text-gray-700">Yangi g'oyalar va kreativ yondashuvlar orqali mijozlarimizga maxsus echimlar taqdim etamiz.</p>
+            <p class="dark:text-white text-gray-700">Yangi g'oyalar va kreativ yondashuvlar orqali mijozlarimizga maxsus yechimlar taqdim etamiz.</p>
           </div>
         </div>
 

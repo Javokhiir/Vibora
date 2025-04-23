@@ -13,7 +13,7 @@
 
       <!-- Sub headline -->
       <h2 class="text-2xl md:text-3xl font-light">
-        Vibora PR agency —  "Z" avlodning eng oliy intelekt vakillaridan tuzilgan <span class="text-blue-500">introverlar</span> agentligi
+        Vibora PR agency —  "Z" avlodning eng oliy intellekt vakillaridan tuzilgan <span class="text-blue-500">introvertlar</span> agentligi
       </h2>
 
       <!-- Paragraph -->

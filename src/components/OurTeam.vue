@@ -11,12 +11,12 @@
           :loop="true"
           :spaceBetween="10"
           @swiper="onSwiper"
-          :autoplay="{ delay: 1000, disableOnInteraction: false }"
+          :autoplay="{ delay: 1500, disableOnInteraction: false }"
           :breakpoints="{
-    320: { slidesPerView: 2 },
-    640: { slidesPerView: 2 },
-    768: { slidesPerView: 2 },
-    1024: { slidesPerView: 3 },
+    320: { slidesPerView: 1 },
+    640: { slidesPerView: 1 },
+    768: { slidesPerView: 1.2 },
+    1024: { slidesPerView: 2 },
     1280: { slidesPerView: 3 }
   }"
           class="team-swiper"
@@ -88,7 +88,7 @@ const team = [
     role: 'PR mutaxassis',
     quote: "Xoʻoʻoʻoʻoʻsh??? Nima muammo okya!?",
     photo: 'javohir-pr.jpg',
-    details: 'Marketing bo\'yicha aniq strategik va analizlar bilan ishlash. PR bo\'yicha antikrizis jarayonlarini boshqarish va mijozlar bilan to\'g\'ri muloqot qilish bo\'yicha soft va hard ko\'nikmalarim mavjud. Marketing bo\'yicha 5 yilga yaqin tajribam, PR bo\'yicha 2yil tajribaga egaman. O\'z qadriyatlarim va standartlarimdan chekaga chiqmagan xolda ishlayman.',
+    details: 'Marketing bo\'yicha aniq strategik va analizlar bilan ishlash. PR bo\'yicha antikrizis jarayonlarini boshqarish va mijozlar bilan to\'g\'ri muloqot qilish bo\'yicha soft va hard ko\'nikmalarim mavjud. Marketing bo\'yicha 5 yilga yaqin tajribam, PR bo\'yicha 2yil tajribaga egaman. O\'z qadriyatlarim va standartlarimdan chetga chiqmagan holda ishlayman.',
     socials: [
       { icon: 'fab fa-instagram', link: 'https://www.instagram.com/javohir_yaxshilikovich?igsh=MXRqbnY5YjJmd2N5Mw==', class: 'hover:text-pink-500 transition' },
       { icon: 'fab fa-telegram', link: 'https://t.me/bazarolog', class: 'hover:text-blue-400 transition' },
