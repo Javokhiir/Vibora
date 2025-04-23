@@ -1,54 +1,21 @@
 <template>
-  <section id="about" class="py-20 bg-white dark:bg-gray-900 overflow-hidden lg:overflow-hidden">
+  <section id="about" class="py-24 transition-colors duration-500 bg-gradient-to-br from-white via-blue-50 to-tiffany-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
     <div class="container mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold text-tiffany-500 mb-6">Biz Haqimizda</h2>
-      <p class="text-lg dark:text-white text-gray-700 mb-12 max-w-3xl mx-auto">
+      <h2 class="text-4xl font-bold text-tiffany-500 dark:text-tiffany-400 mb-6">Biz Haqimizda</h2>
+      <p class="text-lg text-gray-700 dark:text-gray-200 mb-12 max-w-3xl mx-auto">
         Vibora PR marketing va brendni rivojlantirishda innovatsion va yuqori samarali yondashuvlarni taqdim etadi. Bizning
         jamoamiz har bir mijoz uchun individual strategiyalarni ishlab chiqadi.
       </p>
 
-      <div class="flex flex-wrap justify-center gap-8">
-        <!-- Card 1 -->
-        <div class="w-full md:w-1/3 p-4 transform hover:scale-105 transition duration-300">
-          <div class="bg-white/70 dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl group">
-            <div class="h-64 bg-tiffany-100 rounded-xl overflow-hidden mb-6">
-              <img src="/vi-logo.png" alt="Image 1" class="object-cover w-full h-full group-hover:scale-110 transition-all duration-500" />
-            </div>
-            <h3 class="text-2xl font-semibold text-gray-800 mb-2 group-hover:text-tiffany-500 transition duration-300">Yaratilish va Innovatsiya</h3>
-            <p class="dark:text-white text-gray-700">Yangi g'oyalar va kreativ yondashuvlar orqali mijozlarimizga maxsus yechimlar taqdim etamiz.</p>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="w-full md:w-1/3 p-4 transform hover:scale-105 transition duration-300">
-          <div class="bg-white/70 dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl group">
-            <div class="h-64 bg-tiffany-100 rounded-xl overflow-hidden mb-6">
-              <img src="/vi-logo.png" alt="Image 2" class="object-cover w-full h-full group-hover:scale-110 transition-all duration-500" />
-            </div>
-            <h3 class="text-2xl font-semibold text-gray-800 mb-2 group-hover:text-tiffany-500 transition duration-300">Strategiya va Rejalashtirish</h3>
-            <p class="dark:text-white text-gray-700">Bizning maqsadimiz har bir kompaniya uchun o'ziga xos va muvaffaqiyatga erishadigan strategiyalar yaratishdir.</p>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="w-full md:w-1/3 p-4 transform hover:scale-105 transition duration-300">
-          <div class="bg-white/70 dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl group">
-            <div class="h-64 bg-tiffany-100 rounded-xl overflow-hidden mb-6">
-              <img src="/vi-logo.png" alt="Image 3" class="object-cover w-full h-full group-hover:scale-110 transition-all duration-500" />
-            </div>
-            <h3 class="text-2xl font-semibold text-gray-800 mb-2 group-hover:text-tiffany-500 transition duration-300">Brendni Rivojlantirish</h3>
-            <p class="dark:text-white text-gray-700">Brendni yaratish va uni bozorda muvaffaqiyatli pozitsiyalash uchun samarali va ijodiy usullarni qo'llaymiz.</p>
-          </div>
-        </div>
+      <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+        <Card title="Yaratilish va Innovatsiya" icon="⚡" description="Yangi g'oyalar va kreativ yondashuvlar orqali mijozlarimizga maxsus yechimlar taqdim etamiz." />
+        <Card title="Strategiya va Rejalashtirish" icon="🧠" description="Bizning maqsadimiz har bir kompaniya uchun o'ziga xos va muvaffaqiyatga erishadigan strategiyalar yaratishdir." />
+        <Card title="Brendni Rivojlantirish" icon="🚀" description="Brendni yaratish va uni bozorda muvaffaqiyatli pozitsiyalash uchun samarali va ijodiy usullarni qo'llaymiz." />
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-// Script setup qismini kerakli metodlar yoki o'zgaruvchilar bilan to'ldirishingiz mumkin
+import Card from './Card.vue'
 </script>
-
-<style scoped>
-/* Maxsus CSS qo'shish uchun */
-</style>
