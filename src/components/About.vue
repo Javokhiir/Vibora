@@ -13,8 +13,10 @@
         <Card title="Brendni Rivojlantirish" icon="🚀" description="Brendni yaratish va uni bozorda muvaffaqiyatli pozitsiyalash uchun samarali va ijodiy usullarni qo'llaymiz." />
       </div>
     </div>
+    <div class="border-t border-transparent bg-gradient-to-b from-transparent to-gray-900 opacity-30"></div>
   </section>
 </template>
+
 
 <script setup>
 import Card from './Card.vue'

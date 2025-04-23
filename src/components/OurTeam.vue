@@ -1,6 +1,6 @@
 <template>
   <section id="team" class="relative min-h-screen py-16 overflow-hidden w-full">
-    <div class="max-w-[1500px] max-h-auto mx-auto px-4 bg-gray-200 dark:bg-gray-800/60">
+    <div class="max-w-[1500px] max-h-100vh mx-auto px-4 transition-colors duration-500 bg-gradient-to-br from-white via-blue-50 to-tiffany-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800 dark:text-white">
         O'zuvizani bolla:
       </h2>
